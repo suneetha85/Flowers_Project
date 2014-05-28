@@ -1,0 +1,87 @@
+<!--<h2>Signup</h2>
+<%= form_for(:user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+    <div class="field">
+    <%= f.label :confirm_password %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+-->
+
+
+
+<div class="title"><span class="title_icon"><img src="/assets/bullet1.gif" alt="" /></span>Register</div>
+      <div class="feat_prod_box_details">
+        
+        <div class="contact_form">
+          <div class="form_subtitle">create new account</div>
+          <%= form_for :user do |f| %>
+
+          <% if @user.errors.any? %>
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% for message in @user.errors.full_messages %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+            <div class="form_row">
+               <%= f.label :name,:class=>"contact" %>
+                <%= f.text_field :name,:class=>"contact_input" %>             
+            </div>
+
+            <div class="form_row">
+               <%= f.label :email,:class=>"contact" %>
+           <%= f.text_field :email,:class=>"contact_input" %>             
+            </div>
+
+               <div class="form_row">
+               <%= f.label :password,:class=>"contact" %>
+          <%= f.password_field :password,:class=>"contact_input" %>             
+            </div>
+
+             
+               <div class="form_row">
+               <%= f.label :confirm_password,:class=>"contact" %>
+          <%= f.password_field :password_confirmation,:class=>"contact_input" %>             
+            </div> 
+
+            <div class="form_row">
+              <%= submit_tag "Sign Up" , :class=>"register" %>
+               <%= f.submit 'Reset', :type => 'reset', :class=>"register" %>
+                <%= link_to 'Back',:controller=>"account",:action=>"signup", :class=>"register"  %>
+            </div> 
+            </div>
+          <% end %>
+        </div>
+      </div>
+     

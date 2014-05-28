@@ -1,0 +1,19 @@
+<table>
+
+<tr>
+<% count=0 %>
+<% @flowers_gallery.each do |flower|%>
+
+<% if (count % 3) == 0%>
+</tr>
+<tr>
+<% end %>
+<% count+=1 %>
+<td><%= image_tag flower.image.url ,:height=>"100",:width=>"100" %><br />
+Name : <%= flower.product_name %><br />
+Type :<%= flower.product_type %><br />
+Price : <%= flower.price %>
+<%= button_to 'Add to Cart', line_items_path(:store_id => flower.id) %> </td>
+<% end %>
+</tr>
+</table>

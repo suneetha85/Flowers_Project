@@ -1,0 +1,17 @@
+
+
+<%= form_for(:admin) do |f| %>
+
+    <div>
+    <span style="color:#eb5a07;font-size:18px"><%= f.label :name %></span><br/>
+    <%= f.text_field :name %></br></br>
+  </div>
+  <div >
+   <span style="color:#eb5a07;font-size:18px"> <%= f.label :password %></span><br/>
+    <%= f.password_field :password %></br></br>
+  </div>
+
+  <span style="border-radius:10px;color:#eb5a07">
+    <%= f.submit %>
+  </span>
+<% end %>
