@@ -1,60 +1,47 @@
-<!--<h2>Login</h2>
-<%= flash[:notice] %>
-<%= form_for(:user) do |f| %>
+<div class="title">
+  <span class="title_icon">
+    <img src="/assets/bullet1.gif" alt="" />
+  </span>
+  My account
+</div>
 
-    <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-
-<%= link_to "Forget your password?" ,:controller=>"account",:action=>"forget_password" %>
--->
-
-<div class="title"><span class="title_icon"><img src="/assets/bullet1.gif" alt="" /></span>
-  My account</div>
-
-      <div class="feat_prod_box_details">        
-        <div class="contact_form">          
-
-          <div class="form_subtitle">login into your account</div>  
-          <div class="form_row">
-            <div class="error_messages"><%= flash[:notice]%></div>
-          </div>
-
-            <%= form_for(:user) do |f| %>
-
-               <div class="form_row">
-                  
-                   <%= f.label :email,:class=>"contact" %>
-                   <%= f.text_field :email,:class=>"contact_input" %>             
-                </div>
-
-               <div class="form_row">
-                 <%= f.label :password,:class=>"contact" %>
-                  <%= f.password_field :password,:class=>"contact_input" %>             
-              </div>
-
-              <div class="form_row">               
-                <%= link_to "Forgot your password?" ,:controller=>"account",
-                :action=>"forget_password"  %>
-            </div> 
-            
-                        
-          <div class="form_row">
-            <%= submit_tag "Log in", :class=>"register"  %>
-          </div>
-         <% end %>
-        </div>
+<div class="feat_prod_box_details">        
+  <div class="contact_form">      
+    <div class="form_subtitle">login into your account
+    </div>  
+   <!-- <div class="form_row">
+      <div class="error_messages"><%= flash[:notice]%></div>
+    </div>-->
+    <%= form_for(:user) do |f| %>
+      <div class="form_row">        
+         <%= f.label :email,:class=>"contact" %>
+         <%= f.text_field :email,:class=>"contact_input" %> 
+         <font color="red">*</font>            
       </div>
-      
-    </div>
+
+      <div class="form_row">
+        <%= f.label :password,:class=>"contact" %>
+        <%= f.password_field :password,:class=>"contact_input" %> 
+        <font color="red">*</font>            
+      </div>
+
+      <div class="form_row">               
+          <%= link_to "Forgot your password?" ,:controller=>"account",
+          :action=>"forget_password"  %>
+          <%= link_to 'Back',:controller=>"gallery",:action=>"index", :class=>"register"  %>
+      </div>     
+        
+        <div class="form_row"> 
+        <%= check_box_tag :remember_me, 1, params[:remember_me] %>            
+         <%= label_tag :remember_me %> 
+      </div>
+                  
+      <div class="form_row">
+        <%= submit_tag "Log in", :class=>"register"  %>
+      </div>
+      <p class="contact"> <font color="red">*</font>
+           represents mandatory fields
+      </p>
+    <% end %>
+  </div>
+</div>

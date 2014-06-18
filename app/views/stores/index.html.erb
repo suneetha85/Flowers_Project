@@ -1,45 +1,44 @@
-<h1>Listing stores</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product name</th>
-      <th>Product type</th>
-     <!-- <th>Description</th>-->
-      <th>Price</th>
-      <th>Features</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stores.each do |store| %>
-      <tr>
-        <td><%= store.product_name %></td>
-        <td><%= store.product_type %></td>
-        <!--<td><%= store.description %></td>-->
-        <td><%= store.price %></td>
-        <td><%= store.features %></td>
-        <td><%= link_to 'Show', store %></td>
-        <td><%= link_to 'Edit', edit_store_path(store) %></td>
-        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<h1>Listing Products</h1>
+<div class="feat_prod_box_details">
+      
+  <table class="cart_table" width=550>
+    <thead>
+      <tr class="cart_title">
+        <th style="width:25">Product name</th>
+        <th>Product type</th>
+       <!-- <th>Description</th>-->
+        <th>Price</th>
+        <th>Features</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  
+    </thead>
 
-</tbody>
-</table>
-<%= link_to 'New Store', new_store_path %>
+    <tbody>
+      <% @stores.each do |store| %>
+        <tr>
+          <td><%= store.product_name %></td>
+          <td><%= store.product_type %></td>
+          <!--<td><%= store.description %></td>-->
+          <td><%= store.price %></td>
+          <td><%= store.features %></td>
+          <td><%= link_to 'Show', store %></td>
+          <td><%= link_to 'Edit', edit_store_path(store) %></td>
+          <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>  
+    </tbody>
+  </table>
+  <%= link_to 'New Product', new_store_path %>
 
-<div class="flickr_pagination">
-    <div class="page_info">
-      <%= page_entries_info @stores %>
-    </div><br>
-    <%= will_paginate @stores, :container => false %>
+  <div class="flickr_pagination">
+      <div class="page_info">
+        <%= page_entries_info @stores %>
+      </div><br>
+      <%= will_paginate @stores, :container => false %>
   </div>
-  
+</div>
 
 
 

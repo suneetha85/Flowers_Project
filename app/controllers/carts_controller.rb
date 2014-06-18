@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+
   before_action :set_cart, only: [:edit, :update, :destroy]
 
   # GET /carts
@@ -14,14 +15,14 @@ class CartsController < ApplicationController
     begin
       @cart = Cart.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to @cart, :notice => 'Invalid Cart'
-    else
-      respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @cart }
-    end
-  end
+        logger.error "Attempt to access invalid cart #{params[:id]}"
+        redirect_to @cart, :notice => 'Invalid Cart'
+      else
+        respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @cart }
+      end
+     end
   end
 
   # GET /carts/new
@@ -37,14 +38,13 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
-
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @cart }
+        format.json { render action: 'show', status: :created, location: @cart }        
       else
         format.html { render action: 'new' }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
+        format.json { render json: @cart.errors, status: :unprocessable_entity }        
       end
     end
   end
@@ -66,7 +66,7 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
 =begin
-  def destroy
+0  def destroy
     @cart.destroy
     respond_to do |format|
       format.html { redirect_to carts_url }

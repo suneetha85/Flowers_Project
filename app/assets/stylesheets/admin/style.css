@@ -338,3 +338,72 @@ ul.list li a:hover{
 text-decoration:underline;
 }
 
+.feat_prod_box_details{
+padding:10px 0 10px 0;
+margin:0 20px 10px 0;
+clear:both;
+}
+
+/*--------------cart_table-------------*/
+.cart_table{
+width:550px;
+border:1px #CCCCCC solid;
+text-align:center;
+}
+tr.cart_title{
+background-color:#DFDFDF;
+}
+td{
+padding:1px;
+}
+td.cart_total{
+text-align:right;
+padding:5px 15px 5px 0;
+}
+img.cart_thumb{
+border:1px #b2b2b2 solid;
+padding:2px;
+}
+
+/* styling for the slideshow on the homepage */
+ul.slideshow {
+  list-style: none;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 20px;
+  padding: 0;}
+  
+ul.slideshow li {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;}
+ 
+ul.slideshow li.show {
+  z-index: 500;}
+ 
+ul img {
+  border: none;
+border-radius: 10px;}
+ 
+#slideshow-caption {
+  width: 500px;
+  text-align: right;
+  height: 44px;
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  z-index: 500;}
+ 
+#slideshow-caption .slideshow-caption-container {
+  background: transparent url(/assets/transparent.png) repeat;  
+  padding: 10px 45px 10px 25px;   
+  z-index: 1000;}
+ 
+#slideshow-caption p {
+  padding: 0;
+  font: normal 130% arial, sans-serif;
+  color: #FFF;}

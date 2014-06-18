@@ -1,44 +1,11 @@
-<!--<h2>Signup</h2>
-<%= form_for(:user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-    <div class="field">
-    <%= f.label :confirm_password %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
--->
-
-
-
 <div class="title"><span class="title_icon"><img src="/assets/bullet1.gif" alt="" /></span>Register</div>
+
       <div class="feat_prod_box_details">
+        <div class="form_row">
+         <div class="logo">
+            <img src="/assets/offers.gif" alt ="" width=175px height=25px />
+          </div>
+        </div>
         
         <div class="contact_form">
           <div class="form_subtitle">create new account</div>
@@ -61,27 +28,37 @@
 
             <div class="form_row">
                <%= f.label :email,:class=>"contact" %>
-           <%= f.text_field :email,:class=>"contact_input" %>             
+           <%= f.text_field :email,:class=>"contact_input" %>
+           <font color="red">*</font>             
             </div>
 
                <div class="form_row">
                <%= f.label :password,:class=>"contact" %>
-          <%= f.password_field :password,:class=>"contact_input" %>             
+          <%= f.password_field :password,:class=>"contact_input" %> 
+          <font color="red">*</font>
             </div>
 
              
                <div class="form_row">
                <%= f.label :confirm_password,:class=>"contact" %>
-          <%= f.password_field :password_confirmation,:class=>"contact_input" %>             
-            </div> 
+          <%= f.password_field :password_confirmation,:class=>"contact_input" %>
+          <font color="red">*</font>                      
 
+            </div> 
+            
             <div class="form_row">
               <%= submit_tag "Sign Up" , :class=>"register" %>
                <%= f.submit 'Reset', :type => 'reset', :class=>"register" %>
-                <%= link_to 'Back',:controller=>"account",:action=>"signup", :class=>"register"  %>
+                <%= link_to 'Back',:controller=>"gallery",:action=>"index", :class=>"register"  %>
+                <a href="terms" target="_blank",class="register">Terms & Conditions</a>
             </div> 
-            </div>
+            <p class="form_row">By signing up,you are accepting terms and conditions</p>
+            
+           <p> <font color="red">*</font>
+           represents mandatory fields</p>
+          
           <% end %>
+
         </div>
       </div>
      

@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   validates :password ,presence: true,confirmation: true, length: {  in: 6..20}
       #, format: { with: /^[([a-z]|[A-Z])0-9_-]$/, message: "must include one number and one letter lower n upper case" }
 
-               
+# remeber me
+  #  before_create { generate_token(:auth_token) }
+
 
 
   # To encrypt the password
@@ -26,6 +28,12 @@ class User < ActiveRecord::Base
   def authenticated_password(password)
     self.hashed_password == encrypt(password)
   end
+
+  def generate_token(column)
+  begin
+    self[column] = SecureRandom.urlsafe_base64
+  end while User.exists?(column => self[column])
+end
 
   protected #3
   def encrypt_new_password #1

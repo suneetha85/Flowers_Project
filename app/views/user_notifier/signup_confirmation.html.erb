@@ -36,7 +36,7 @@
           </tr>
           <tr>
             <td align="center">
-              <h1 style="color:#0bc5a0;font-size:28px;font-family:Calibri;font-weight:strong;">Shoe Park</h1>
+              <h1 style="color:#0bc5a0;font-size:28px;font-family:Calibri;font-weight:strong;">Flowershini Boutique</h1>
             </td>
           </tr>
         </table>
@@ -45,7 +45,15 @@
     </tr>
   </table>
   <!-- END TOP TABLE -->
- 
+ <div class="form_row">
+        <div class="logo">
+            <img src="/assets/thanku.gif" alt ="" width=350px height=75px />
+        </div>
+        <div class="logo">
+            <img src="/assets/subscribe.gif" alt ="" width=350px height=75px />
+        </div>
+
+      </div> 
  
   <table width="670" align="center" cellspacing="0" cellpadding="0" bgcolor="#0bc5a0">
     <tr>
@@ -60,25 +68,19 @@
                 <tr>
                   <td width="30">&nbsp;</td>
                   <td>
-
-                    
-
-                    
-                    
-                    
-                    
-
                     <table align="center" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td align="center">
                           <h1 style="color:#e74c3c;font-size:22px;font-family:Calibri;font-weight:normal;"> Hello <%= @user.name %></h1>
-                          <h2 style="color:#27ae60;font-size:18px;font-family:Calibri;font-weight:normal;"> Thank you for Signing Up with Us. </h2>
+                          <h2 style="color:#009900;font-size:18px;font-family:Calibri;font-weight:normal;"> Thank you for Signing Up with Flowershini. </h2><br/>
+                          <h2 style="color:#FF00FF;font-size:18px;font-family:Calibri;font-weight:normal;"> You are at the Right place to select for someone a pefect gift. </h2><br/>
+
                           <p style="color:#2c3e50;font-family:Calibri;font-size:18px;line-height:20px;margin:10px 0 15px 0;">
-                            Your profile is not complete, please complete it by logging to your account at: <a href="http://localhost:3000/login">this link</a>
-                          </p>
-                          
-                          
-                          
+                            You have registered with Flowershini.com using the email address:<br/>
+                            <%= @user.email %><br/>
+                            Click the link below to login and start shopping.
+                            <a href="http://localhost:3000/account/login">Click To Login</a>
+                          </p> 
                         </td>
                       </tr>
                     </table>
@@ -88,9 +90,6 @@
                         <td style="font-size:0;" height="55">&nbsp; </td>
                       </tr>
                     </table>
-                            
-                    
-                    
                     <table>
                       <tr>
                         <td style="font-size:0;" height="55">&nbsp; </td>
@@ -109,7 +108,7 @@
                               </td>
                               <td width="10">&nbsp;</td>
                               <td valign="top">
-                                <a href="#"><img style="border:0;"  src="https://dl-web.dropbox.com/get/Apps/OpenSpace/email-template/signup-email/social_twitter.png?w=AACwb58rgjZtIWtVkuN6MG-ab28o3fmQibAlmfvUQZ3W6A" alt="" /></a>
+                                <a href="www.twitter.com"><img style="border:0;"  src="/assets/twitter.gif" alt="" height=25px width=25px/></a>
                               </td>
                             </tr>
                           </table>
@@ -125,7 +124,7 @@
                               </td>
                               <td width="10">&nbsp;</td>
                               <td valign="top">
-                                <a href="#"><img style="border:0;"  src="https://dl-web.dropbox.com/get/Apps/OpenSpace/email-template/signup-email/social_facebook.png?w=AACotPLmfu22JK_KPSLIthRwQagsr_CR1xuFRXPJI_1V6w" alt="" /></a>
+                                <a href="www.facebook.com"><img style="border:0;"  src="/assets/facebook.gif" alt="" height=25px width=25px/></a>
                               </td>
                             </tr>
                           </table>
@@ -141,7 +140,7 @@
                               </td>
                               <td width="10">&nbsp;</td>
                               <td valign="top">
-                                <a href="#"><img style="border:0;"  src="https://dl-web.dropbox.com/get/Apps/OpenSpace/email-template/signup-email/social_linkedin.png?w=AAB-MIvcXMnDMRdep44VQV6DMgRULbab418oTHEDks06-w" alt="" /></a>
+                                <a href="www.linkedin.com"><img style="border:0;"  src="/assets/linkedin.gif" alt="" height=25px width=25px/></a>
                               </td>
                             </tr>
                           </table>

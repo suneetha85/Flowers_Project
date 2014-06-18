@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   #layout "application"
+  
   before_filter :authorize
   before_action :set_store, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +11,9 @@ class StoresController < ApplicationController
     @stores =  Store.paginate(:page=>params[:page])
   end
 
+def set_cart
+      @cart = Cart.find(params[:id])
+    end
   # GET /stores/1
   # GET /stores/1.json
   def show

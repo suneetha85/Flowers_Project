@@ -1,4 +1,6 @@
 Flowers::Application.routes.draw do
+  resources :locations
+
   resources :line_items
 
   resources :carts

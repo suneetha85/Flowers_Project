@@ -6,19 +6,19 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body > 
 <div id="wrap">
   <div class="header">
-    <div class="logo"><a href="http://all-free-download.com/free-website-templates/"><img src="/assets/logo.gif" alt="" border="0" /></a></div>
+    <div class="logo"><a href="/gallery/index"><img src="/assets/logo.gif" alt="" border="0" /></a></div>
     <div id="menu">
       <ul>
-        <li class="selected"><a href="http://all-free-download.com/free-website-templates/">home</a></li>
-        <li><a href="about.html">about us</a></li>
-        <li><a href="/stores">flowers</a></li>
-        <li><a href="/login">my accout</a></li>
+        <li class="selected"><a href="/account/welcome">home</a></li>
+        <li><a href="/account/about">about us</a></li>
+        <li><a href="/gallery/index">flowers</a></li>
+        <li><a href="/login">login</a></li>
         <li><a href="/signup">register</a></li>
-        <li><a href="details.html">prices</a></li>
-        <li><a href="/contact">contact</a></li>
+        <li><a href="/carts">cart</a></li>
+       <!-- <li><a href="/contact">contact</a></li>-->
       </ul>
     </div>
   </div>
@@ -34,56 +34,66 @@
         Search <input type="text" name="search">
         <input type="submit" value="Go">
       <% end %><br/>
-      <div class="languages_box"> <span class="red">Languages:</span> <a href="http://all-free-download.com/free-website-templates/" class="selected"><img src="/assets/gb.gif" alt="" border="0" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="/assets/fr.gif" alt="" border="0" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="/assets/de.gif" alt="" border="0" /></a> </div>
-      <div class="currency"> <span class="red">Currency: </span> <a href="http://all-free-download.com/free-website-templates/">GBP</a> <a href="http://all-free-download.com/free-website-templates/">EUR</a> <a href="http://all-free-download.com/free-website-templates/" class="selected">USD</a> </div>
-      
-      
-      <div class="cart">
-        <div class="title"><span class="title_icon"><img src="/assets/cart.gif" alt="" /></span>My cart</div>
-        <div class="home_cart_content"> 3 x items | <span class="red">TOTAL: 100$</span> </div>
-        <a href="cart.html" class="view_cart">view cart</a> </div>
+       <% if (controller_name == "gallery" and action_name == "index")  %>
+            <%= hidden_div_if(@cart.line_items.empty?, id:'cart') do %>
+            <div class="cart1">
+              <div class="title"><span class="title_icon">
+                <img src="/assets/cart.gif" alt="" /></span>My cart
+              </div>        
+           </div>
+            <%= render @cart %>
+            <%end%>
+        <%end%>
       <div class="title"><span class="title_icon"><img src="/assets/bullet3.gif" alt="" /></span>About Our Shop</div>
-      <div class="about">
-        <p> <img src="/assets/about.gif" alt="" class="right" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
+      
+        <ul class="slideshow">
+        <li class="show"><img width="300" height="300" src="/assets/about.gif" alt="" /></li>
+        <li><img width="300" height="300" src="/assets/room2.gif" alt="" /></li>
+        <li><img width="300" height="300" src="/assets/room3.gif" alt="" /></li>
+        <li><img width="300" height="300" src="/assets/room4.gif" alt="" /></li>
+        <li><img width="300" height="300" src="/assets/room5.gif" alt="" /></li>
+        </ul> 
+        <div class="about">
+         For quality flower arrangements and gifts in Bothell, order from <span>Flowershini Boutique!</span> Our trusted florists are committed to creating beautiful, unique floral gifts for any special occasion. The Flower Boutique offers flower delivery in and around Bothell and we also offer nationwide delivery through our reliable florist network. The Flower Boutique also provides same-day delivery for your important last minute gifts!</p>
       </div>
       <div class="right_box">
         <div class="title"><span class="title_icon"><img src="/assets/bullet4.gif" alt="" /></span>Promotions</div>
-        <div class="new_prod_box"> <a href="http://all-free-download.com/free-website-templates/">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="/assets/promo_icon.gif" alt="" /></span> <a href="http://all-free-download.com/free-website-templates/"><img src="/assets/thumb1.gif" alt="" class="thumb" border="0" /></a> </div>
+        <div class="new_prod_box"> <a href="/gallery/index">Violets</a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="/assets/promo_icon.gif" alt="" /></span> <a href="/gallery/index"><img src="/assets/thumb4.gif" alt="" class="thumb" border="0" width=150px height=150px/></a> </div>
         </div>
-        <div class="new_prod_box"> <a href="http://all-free-download.com/free-website-templates/">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="/assets/promo_icon.gif" alt="" /></span> <a href="http://all-free-download.com/free-website-templates/"><img src="/assets/thumb2.gif" alt="" class="thumb" border="0" /></a> </div>
+        <div class="new_prod_box"> <a href="/gallery/index">Surprise</a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="/assets/promo_icon.gif" alt="" /></span> <a href="/gallery/index"><img src="/assets/thumb5.gif" alt="" class="thumb" border="0" width=150px height=150px/></a> </div>
         </div>
-        <div class="new_prod_box"> <a href="http://all-free-download.com/free-website-templates/">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="/assets/promo_icon.gif" alt="" /></span> <a href="http://all-free-download.com/free-website-templates/"><img src="/assets/thumb3.gif" alt="" class="thumb" border="0" /></a> </div>
+        <div class="new_prod_box"> <a href="/gallery/index">Anniversary</a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="/assets/promo_icon.gif" alt="" /></span> <a href="/gallery/index"><img src="/assets/prod2.jpg" alt="" class="thumb" border="0" width=150px height=150px/></a> </div>
         </div>
       </div>
       <div class="right_box">
         <div class="title"><span class="title_icon"><img src="/assets/bullet5.gif" alt="" /></span>Categories</div>
         <ul class="list">
-          <li><a href="http://all-free-download.com/free-website-templates/">accesories</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">flower gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">specials</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">hollidays gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">accesories</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">flower gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">specials</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">hollidays gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">accesories</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">flower gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">specials</a></li>
+          <li><a href="/gallery/index">accesories</a></li>
+          <li><a href="/gallery/index">flower gifts</a></li>
+          <li><a href="/gallery/index">specials</a></li>
+          <li><a href="/gallery/index">hollidays gifts</a></li>
+          <li><a href="/gallery/index">accesories</a></li>
+          <li><a href="/gallery/index">flower gifts</a></li>
+          <li><a href="/gallery/index">specials</a></li>
+          <li><a href="/gallery/index">hollidays gifts</a></li>
+          <li><a href="/gallery/index">accesories</a></li>
+          <li><a href="/gallery/index">flower gifts</a></li>
+          <li><a href="/gallery/index">specials</a></li>
         </ul>
         <div class="title"><span class="title_icon"><img src="/assets/bullet6.gif" alt="" /></span>Partners</div>
         <ul class="list">
-          <li><a href="http://all-free-download.com/free-website-templates/">accesories</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">flower gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">specials</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">hollidays gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">accesories</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">flower gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">specials</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">hollidays gifts</a></li>
-          <li><a href="http://all-free-download.com/free-website-templates/">accesories</a></li>
+          <li><a href="/gallery/index">accesories</a></li>
+          <li><a href="/gallery/index">flower gifts</a></li>
+          <li><a href="/gallery/index">specials</a></li>
+          <li><a href="/gallery/index">hollidays gifts</a></li>
+          <li><a href="/gallery/index">accesories</a></li>
+          <li><a href="/gallery/index">flower gifts</a></li>
+          <li><a href="/gallery/index">specials</a></li>
+          <li><a href="/gallery/index">hollidays gifts</a></li>
+          <li><a href="/gallery/index">accesories</a></li>
         </ul>
       </div>
     </div>
@@ -93,13 +103,13 @@
   <!--end of center content-->
   <div class="footer">
     <div class="left_footer"><img src="/assets/footer_logo.gif" alt="" /><br />
-      <a href="http://csscreme.com"><img src="/assets/csscreme.gif" alt="" border="0" /></a></div>
-    <div class="right_footer"> <a href="http://all-free-download.com/free-website-templates/">home</a> <a href="http://all-free-download.com/free-website-templates/">about us</a> <a href="http://all-free-download.com/free-website-templates/">services</a> <a href="http://all-free-download.com/free-website-templates/">privacy policy</a> <a href="http://all-free-download.com/free-website-templates/">contact us</a> </div>
+      <a href="http://csscreme.com"><img src="/assets/csscreme.gif" alt="" border="0" /></a>
+      <div class="copyright" >
+        Copyright © Flowershini.com  All rights reserved
+      </div>
+    </div>   
   </div>
 </div>
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
-
-
 </body>
 </html>
 

@@ -1,19 +1,32 @@
-<% unless cart.line_items.empty? %>
-<div class="cart_title">Your Cart</div>
-<table>
-	<%= render(cart.line_items) %>
-	<tr>
-		<td colspan="2">Total</td>
-		<td class="total_cell"><%= number_to_currency(cart.total_price)  %></td>
-	</tr>
-</table>
-<%= button_to 'Empty Cart', cart, :method => :delete, :confirm => 'Are you sure?' %>
-<p>
-	<%= link_to "Continue Shopping",:controller=>"gallery",:action=>"index" %> | 
-	<% unless session[:user].nil? %>
-<%= link_to "Checkout" ,:controller=>"gallery",:action=>"checkout",:amount=>cart.total_price %>
-	<% else %>
-	<%= link_to "Checkout", :controller=>"account",:action=>"login" %>
-	<% end %>
-</p>
-<% end %>
+<!--<div class="title">
+	<span class="title_icon">
+		<img src="/assets/bullet1.gif" alt="" />
+	</span>Your cart
+</div>-->
+<div class="feat_prod_box_details">
+	<% unless cart.line_items.empty? %>
+	    <table class="cart_table">
+	    	<tr class="cart_title">
+				<!--<td>Item pic</td>-->
+		        <td style="width:10">Product name</td>
+		        <td>Unit price</td>
+		        <td>Qty</td>
+		        <td>Total</td>
+		        <td></td>
+		    </tr     
+			<%= render(cart.line_items) %>
+			<tr>
+				<td colspan="4" class="cart_total"><span class="red">TOTAL PRICE:</span></td>
+				<td class="total_cell"><%= number_to_currency(cart.total_price)  %></td>
+			</tr>
+		</table>
+		<%= button_to 'Empty Cart', cart, :method => :delete,:class=>"continue", :confirm => 'Are you sure?' %>		
+			<a href="/gallery/index" class="continue">&lt; continue</a> | 
+			<% unless session[:user].nil? %>				
+				<%= link_to "Checkout" , :class=>"checkout", controller: "gallery", action: "checkout", amount:cart.total_price %>
+			<% else %>
+				<a href="/account/login" class="checkout">checkout&gt;</a>
+			<% end %>
+		
+	<% end %>     
+</div>

@@ -1,0 +1,71 @@
+<div class="crumb_nav"> <a href="/gallery/index">home</a> &gt;&gt;<%= params[:name] %> </div>
+      <div class="title"><span class="title_icon"><img src="/assets/bullet1.gif" alt="" /></span><%= params[:name] %></div>
+      <div class="feat_prod_box_details">
+        <div class="prod_img"><%= image_tag params[:image] ,:height=>"135",:width=>"150"%><br />
+          <br />
+          <a href="<%= params[:image] %>" rel="lightbox" width=400px height=400px ><img src="/assets/zoom.gif" alt="" border="0" /></a>
+
+           </div>
+        <div class="prod_det_box">
+          <div class="box_top"></div>
+          <div class="box_center">
+            <div class="prod_title">Type</div>
+            <p class="details"><%= params[:type] %> </p>
+            <div class="prod_title">Description</div>
+            <p class="details"><%= params[:description] %> </p>
+            <div class="prod_title">Features</div>
+            <p class="details"><%= params[:features] %> </p>
+            <div class="price"><strong>PRICE:</strong>
+             <span class="red"><%= number_to_currency(params[:price]) %> </span>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="box_bottom"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="demo" class="demolayout">
+        <ul id="demo-nav" class="demolayout">
+          <li><a class="active" href="#tab1">Related Products</a></li>
+          <li><a class="" href="#tab2">More details</a></li>
+          
+        </ul>
+        <div class="tabs-container">
+          
+          <div style="display: block;" class="tab" id="tab1">
+            <div class="new_prod_box"> <a href="/gallery/index">product name</a>
+              <div class="new_prod_bg"> <a href="/gallery/index"><img src="/assets/thumb1.gif" alt="" class="thumb" border="0" width=120 height=100 /></a> </div>
+            </div>
+            <div class="new_prod_box"> <a href="/gallery/index">product name</a>
+              <div class="new_prod_bg"> <a href="/gallery/index"><img src="/assets/thumb2.gif" alt="" class="thumb" border="0" width=120 height=100 /></a> </div>
+            </div>
+            <div class="new_prod_box"> <a href="/gallery/index">product name</a>
+              <div class="new_prod_bg"> <a href="/gallery/index"><img src="/assets/thumb3.gif" alt="" class="thumb" border="0" width=120 height=100 /></a> </div>
+            </div>
+            <div class="new_prod_box"> <a href="/gallery/index">product name</a>
+              <div class="new_prod_bg"> <a href="/gallery/index"><img src="/assets/thumb4.gif" alt="" class="thumb" border="0" width=120 height=100 /></a> </div>
+            </div>
+            <div class="new_prod_box"> <a href="/gallery/index">product name</a>
+              <div class="new_prod_bg"> <a href="/gallery/index"><img src="/assets/thumb5.gif" alt="" class="thumb" border="0" width=120 height=100  /></a> </div>
+            </div>
+            <div class="new_prod_box"> <a href="/gallery/index">product name</a>
+              <div class="new_prod_bg"> <a href="/gallery/index"><img src="/assets/thumb6.gif" alt="" class="thumb" border="0" width=120 height=100 /></a> </div>
+            </div>
+            <div style="display: none;" class="tab" id="tab2">
+            <p class="more_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+            <ul class="list">
+              <li><a href="/gallery/index">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+              <li><a href="/gallery/index">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+              <li><a href="/gallery/index">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+              <li><a href="/gallery/index">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+            </ul>
+            <p class="more_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+          </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+
+
+        
+          
